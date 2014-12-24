@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+
 int main() {
     int x, x1;
     //x1 - Футы;

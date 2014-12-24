@@ -29,8 +29,6 @@ string tabulation(int &tab_counter)
 
 void processing(string line, ofstream &fout, int check, ifstream &fin, int &tab_counter)
 {
-	if ((line == "\n") || (line == ""))
-		return;
 	string newline = "";
 	line = trim(line);
 	int i = 0;
@@ -48,6 +46,7 @@ void processing(string line, ofstream &fout, int check, ifstream &fin, int &tab_
 		i += (tab_counter * 4)+1;
 		print(line, fout);
 		tab_counter++;
+		if ((newline != "\n") && (newline != ""))
 		processing(newline, fout, 0, fin, tab_counter);
 		}
 		if (line.at(i) == '}')
@@ -72,6 +71,7 @@ void processing(string line, ofstream &fout, int check, ifstream &fin, int &tab_
 			line.erase(i + 1, line.size() - i);
 			line = tabulation(tab_counter) + line;
 			print(line, fout);
+			if ((newline != "\n") && (newline != ""))
 			processing(newline, fout, 0, fin, tab_counter);
 			i += tab_counter * 4;
 		}
