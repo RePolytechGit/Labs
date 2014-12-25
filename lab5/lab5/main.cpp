@@ -90,7 +90,7 @@ void processing(string line, ofstream &fout, int check, ifstream &fin, int &tab_
 			check++;
 			line = tabulation(tab_counter) + line;
 			print(line, fout);
-			while ((line.at(i) != '*') && (line.at(i + 1) != '\\'))
+			while ((line.at(i) != '*') && (line.at(i + 1) != '/'))
 			{
 
 				i++;
@@ -107,7 +107,7 @@ void processing(string line, ofstream &fout, int check, ifstream &fin, int &tab_
 		}
 		i++;
 	}
-	// Вывод строки, если изменения не понадобились.
+	// Г‚Г»ГўГ®Г¤ Г±ГІГ°Г®ГЄГЁ, ГҐГ±Г«ГЁ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї Г­ГҐ ГЇГ®Г­Г Г¤Г®ГЎГЁГ«ГЁГ±Гј.
 	if (check == 0)
 	{
 		line = tabulation(tab_counter) + line;
@@ -137,9 +137,9 @@ int main()
 	string out;
 	string default_in = "in.cpp";
 	setlocale(LC_ALL, "rus");
-	cout << "Укажите расположение входного файла: ";
+	cout << "Г“ГЄГ Г¦ГЁГІГҐ Г°Г Г±ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐ ГўГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г : ";
 	getline(cin, in);
-	cout << "Укажите расположение выходного файла: ";
+	cout << "Г“ГЄГ Г¦ГЁГІГҐ Г°Г Г±ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐ ГўГ»ГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г : ";
 	getline(cin, out);
 	if (out == "")
 		out = "out.cpp";
